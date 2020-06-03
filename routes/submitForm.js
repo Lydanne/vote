@@ -20,7 +20,6 @@ router.post('/', function(req, res) {
     return res.status(401).send({ msg: '密码错误' });
   }
 
-  row.options[select].number ++;
   //row.save();
   let user = userModel.find({ip})[0];
   if(!user){
@@ -31,6 +30,7 @@ router.post('/', function(req, res) {
   if(user.submits.indexOf(formId)!==-1){
     return res.status(403).send({msg:'重复投票'});
   }
+  row.options[select].number ++;
   user.submits.push(formId);
   res.send(other);
 });
