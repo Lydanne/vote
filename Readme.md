@@ -22,14 +22,11 @@ Req:body
 {
     pwd:String, //密码
     title:String, //标题
-    form:{
-            title:String,//标题
-            options:[
-                {
-                    value:"选项1"
-                }
-            ]
-    }
+    options:[
+        {
+             value:"选项1"
+        }
+     ]
 }
 ```
 
@@ -112,12 +109,10 @@ Req:Params
 
 ```js
 {
-    select:[
-        0, //第一个 选项
-        1, //第二个 选项
-        2
-    ],
-    ip:String
+    select:Number, // 选择的序号
+    ip:String,
+    pwd:String,
+    formId:String,
 }
 ```
 
